@@ -1,0 +1,79 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Odds/Evens!</title>
+    <style>
+
+      .grid-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        grid-column: 2 1fr;
+        grid-template-areas: "banner banner"
+                              "odds" "evens"
+                              "about";
+        grid-gap: 15px;
+      }
+
+      .banner {
+        grid-area: "banner";
+        background: gray;
+        color: white;
+        border-radius: 15px;
+        border-color: white;
+      }
+
+      .odds {
+        grid-area: "odds";
+        color: white;
+        background: #de9d2d;
+        border-radius: 15px;
+        border-color: white;
+      }
+
+      .evens {
+        grid-area: "evens";
+        color: white;
+        background: #2db4de;
+        border-radius: 15px;
+        border-color: white;
+      }
+
+      .about {
+        grid-area: "about";
+        color: white;
+        background: gray;
+        border-radius: 5px;
+        border-color: white;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="grid-container">
+
+      <div class="banner">
+        <!-- Logo Img -->
+        <h1>ODDS / EVENS</h1>
+      </div>
+
+      <div class="odds">
+        <h3>ODDS</h3>
+      </div>
+
+      <div class="evens">
+        <h3>EVENS</h3>
+      </div>
+
+      <div class="about">
+        <h3>How to play</h3>
+      </div>
+
+    </div>
+
+  </body>
+</html>

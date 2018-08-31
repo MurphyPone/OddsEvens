@@ -3,8 +3,8 @@ var focusedPlayer;
 var focusedText;
 
 var gamestate = 0;
-var player_odds;
-var player_evens;
+var player_odds = 0;
+var player_evens = 0;
 
 var wins_odds = 0;
 var wins_evens = 0;
@@ -38,6 +38,7 @@ document.onkeypress = function(e) {
   }
 
   if(event.keyCode == 13) { //--> enter
+    focusedPlayer.css("border-style", "solid");
     if(gamestate == 0) {
       gameLogic();
       gamestate = 1; //increment gamestate to prep for next game

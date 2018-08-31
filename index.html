@@ -2,52 +2,81 @@
   <head>
     <meta charset="utf-8">
     <title>Odds/Evens!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    </script>
     <style>
 
+      @font-face {
+        font-family: 'Conductive';
+        src: url('Conductive.ttf'), url('Conductive.ttf');
+      }
+
       .grid-container {
+        font-family: Conductive;
         display: grid;
         width: 100%;
         height: 100%;
         text-align: center;
-        grid-column: 2 1fr;
-        grid-template-areas: "banner banner"
-                              "odds" "evens"
-                              "about";
-        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 5fr 1fr;
+        grid-template-areas:  "banner banner"
+                              "odds    evens"
+                              "about  result";
+        grid-gap: 8px;
       }
 
       .banner {
-        grid-area: "banner";
-        background: gray;
+        grid-area: banner;
+        background: linear-gradient(to bottom right, #de9d2d 0%, #de9d2d 35%, #2db4de 65%, #2db4de 100%);
         color: white;
-        border-radius: 15px;
-        border-color: white;
+        font-size: 30px;
+        border-radius: 10px;
+        padding-top: 2%;
+        border-style: solid;
+        border-color: #000000;
       }
 
       .odds {
-        grid-area: "odds";
+        grid-area: odds;
         color: white;
+        font-size: 40px;
         background: #de9d2d;
-        border-radius: 15px;
-        border-color: white;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #000000;
       }
 
       .evens {
-        grid-area: "evens";
+        grid-area: evens;
         color: white;
+        font-size: 40px;
         background: #2db4de;
-        border-radius: 15px;
-        border-color: white;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #000000;
       }
 
       .about {
-        grid-area: "about";
+        grid-area: about;
         color: white;
+        font-size: 15px;
+        text-align: left;
+        padding-left: 25px;
         background: gray;
-        border-radius: 5px;
-        border-color: white;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #000000;
       }
 
+      .result {
+        padding-top: 5px;
+        border-radius: 15px;
+        border-style: solid;
+        border-color: black;
+        background-color: #7dc729;
+        color: white;
+      }
 
     </style>
   </head>
@@ -57,20 +86,31 @@
     <div class="grid-container">
 
       <div class="banner">
-        <!-- Logo Img -->
-        <h1>ODDS / EVENS</h1>
+        <h1>EVENS --- ODDS</h1>
       </div>
 
-      <div class="odds">
-        <h3>ODDS</h3>
+      <div class="odds" id="div-odds">
+        <h3 id='wins-odd'>ODDS [0]</h3>
+        <a id="text-odd" value="" style="font-size: 200px;">[]</a>
       </div>
 
-      <div class="evens">
-        <h3>EVENS</h3>
+      <div class="evens" id="div-evens">
+        <h3 id='wins-even'>EVENS [0]</h3>
+        <a id="text-even" value="" style="font-size: 200px;">[]</a>
       </div>
 
       <div class="about">
-        <h3>How to play</h3>
+        <h3><u>How to play</u></h3>
+        <a  style="20px;">The goal of the game is to pick a whole number which, when added to your oppenent's whole number, will be even or odd respectively.</a>
+      </div>
+
+      <div class="result">
+        <h2 id='text-result'>And the winner is...</h2>
+        <h4 id='prompt'></h4>
+        <!--
+        <a style="padding-right: 85%; padding-top: 20%;">Odd wins</a>
+        <a style="padding-left: 85%; padding-bottom: 0%;">Even wins</a>
+        -->
       </div>
 
     </div>

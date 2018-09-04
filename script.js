@@ -28,7 +28,7 @@ $(function() {
 });
 
 
-document.onkeypress = function(e) {
+document.onkeypress = function( event ) {
   var x = event.key;
   if( !isNaN(x) ) {
     if(focusedPlayer.attr('id') == 'div-odds') { player_odds = parseInt(x); }
